@@ -5,6 +5,7 @@ module.exports = {
     entry: './index.js',
     output: {
       path: path.resolve(__dirname, 'output'),
-      filename: 'awesome output.js'
+      filename: 'awesome-output.js'
     }
-}
+};
+
