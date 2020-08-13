@@ -1,6 +1,7 @@
 const path = require("path");
 const prodConfig = require("./webpack.prod");
 const devConfig = require("./webpack.dev");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const MODE = process.env.npm_lifecycle_event;
 
@@ -19,9 +20,19 @@ const commonConfig = {
                 use: {
                     loader: "babel-loader"
                 }
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                use: ["url-loader?limit-10000", "img-loader"]
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, "../src/index.html"),
+            filename: "index.html"
+        })
+    ]
 };
 
 if (MODE === "dev"){

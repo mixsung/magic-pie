@@ -1,1 +1,1 @@
-console.log("Hello node");
+import "./something.css";
