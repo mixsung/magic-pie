@@ -2,13 +2,34 @@
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;
 
 :root {
-  --mainColor: #12345678;
+  --mainColor: #070606ef;
 }
 
+
+.grid {
+	background-color: #FFFF;
+	padding: 100px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+	grid-template-rows: repeat(auto-fill);
+	grid-gap: 40px;
+  }
+  .item {
+	background-color:#5653;
+	height: 150px;
+	width: 200px;
+  }
+
 body {
+	font-family: 'Song Myung', serif;
+	background-color: #1CACF4;
+	padding: 100px;
   color: var(--mainColor);
-  font-family: system-ui;
   overflow-wrap: break-word;
+}
+
+body h1{
+padding: 20px;
 }
 
 :--heading {
@@ -22,20 +43,4 @@ a {
   &:hover {
     color: rebeccapurple;
   }
-}
-
-body {
-	grid-kiss:
-		"+-------------------------------+      "
-		"|           header ↑            | 120px"
-		"+-------------------------------+      "
-		"                                       "
-		"+-- 30% ---+  +--- auto --------+      "
-		"| .sidebar |  |       main      | auto "
-		"+----------+  +-----------------+      "
-		"                                       "
-		"+-------------------------------+      "
-		"|              ↓                | 60px "
-		"|         → footer ←            |      "
-		"+-------------------------------+      "
 }
